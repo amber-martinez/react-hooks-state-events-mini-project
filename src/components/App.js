@@ -31,6 +31,14 @@ function App() {
     setSelectedCategory(event.target.textContent)
     
     event.target.classList.add("selected")
+
+    let eventChildren = Array.from(event.target.parentNode.children)
+    console.log(eventChildren)
+    eventChildren.forEach(child => {
+      if (child !== event.target) {
+        child.classList.remove("selected")
+      }
+    })
   }
 
   const tasksToDisplay = tasks.filter((task) => {
@@ -38,6 +46,7 @@ function App() {
 
     return task.category === selectedCategory;
   })
+  
 
   return (
     <div className="App">

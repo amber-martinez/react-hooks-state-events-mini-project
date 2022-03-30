@@ -7,7 +7,7 @@ function TaskList({ handleDelete, tasksToDisplay }) {
 
   return (
     <div className="tasks" task={tasksToDisplay}>
-        {tasksToDisplay.map((task) => (
+        {tasksToDisplay.map(task => (
           <Task key={task.text} text={task.text} category={task.category} handleDelete={handleDelete}/>
         ))}
     </div>
